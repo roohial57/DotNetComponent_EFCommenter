@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCommenter.Demo", "EfComme
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCommenter", "EFCommenter\EFCommenter.csproj", "{47A87444-73AA-43EC-A854-04FCD3CCFF48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCommenter.Test", "EFCommenter.Test\EFCommenter.Test.csproj", "{9CBA70EB-43BF-4710-B5DD-F74E944CBA0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{47A87444-73AA-43EC-A854-04FCD3CCFF48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47A87444-73AA-43EC-A854-04FCD3CCFF48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47A87444-73AA-43EC-A854-04FCD3CCFF48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CBA70EB-43BF-4710-B5DD-F74E944CBA0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CBA70EB-43BF-4710-B5DD-F74E944CBA0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CBA70EB-43BF-4710-B5DD-F74E944CBA0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CBA70EB-43BF-4710-B5DD-F74E944CBA0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
