@@ -31,7 +31,7 @@ namespace EFCommenter.Demo.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasComment("A comment to test!!!");
+                        .HasComment("The full name of the person!!!");
 
                     b.Property<int>("Type")
                         .HasColumnType("int")

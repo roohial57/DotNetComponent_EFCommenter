@@ -49,7 +49,7 @@ public class ModelBuilderExtensionsTests
     {
         public int Id { get; set; }
         /// <summary>
-        /// A comment to test!!!
+        /// The full name of the person!!!
         /// </summary>
         public string Name { get; set; } = "";
         public PersonType Type { get; set; }

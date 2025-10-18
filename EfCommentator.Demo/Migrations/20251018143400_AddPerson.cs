@@ -16,7 +16,7 @@ namespace EFCommenter.Demo.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false, comment: "A comment to test!!!"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false, comment: "The full name of the person!!!"),
                     Type = table.Column<int>(type: "int", nullable: false, comment: "0: Admin | \n1: User | \n2: Guest | ")
                 },
                 constraints: table =>

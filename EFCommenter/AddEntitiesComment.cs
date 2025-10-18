@@ -1,13 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Namotion.Reflection;
+using System;
+using System.Linq;
 
 
 namespace EFCommenter;
 public static partial class ModelBuilderExtentionMethods
 {
     /// <summary>
-    /// All summaries of properties and enums will be added as column comments.
+    /// All summaries of entities, properties, and enums will be added as comments on the corresponding database tables and columns.
     /// </summary>
     /// <remarks>
     /// <b>Note:</b>

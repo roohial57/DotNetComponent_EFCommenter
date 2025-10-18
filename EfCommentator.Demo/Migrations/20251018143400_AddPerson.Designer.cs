@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCommenter.Demo.Migrations
 {
     [DbContext(typeof(DemoDbContext))]
-    [Migration("20251018115708_AddPerson")]
+    [Migration("20251018143400_AddPerson")]
     partial class AddPerson
     {
         /// <inheritdoc />
@@ -34,7 +34,7 @@ namespace EFCommenter.Demo.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasComment("A comment to test!!!");
+                        .HasComment("The full name of the person!!!");
 
                     b.Property<int>("Type")
                         .HasColumnType("int")

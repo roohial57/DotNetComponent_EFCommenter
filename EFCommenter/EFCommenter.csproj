@@ -1,9 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <TargetFramework>net8.0</TargetFramework>	  
+	  <PackageId>EFCommenter</PackageId>
+	  <Version>1.0.0</Version>
+	  <Authors>Roohi Alizadeh</Authors>
+	  <Description>
+		  All summaries of entities, properties, and enums will be added as comments on the corresponding database tables and columns.
+
+		  Note: The XML documentation file option must be enabled in your .csproj file.
+		  That means you need to add this to your project file:
+		  &lt;PropertyGroup&gt;
+		  &lt;GenerateDocumentationFile&gt;true&lt;/GenerateDocumentationFile&gt;
+		  &lt;/PropertyGroup&gt;
+	  </Description>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <PackageTags>efcore;comment;database;postgresql;sqlserver</PackageTags>
+	  <RepositoryUrl>https://github.com/roohial57/DotNetComponent_EFCommenter</RepositoryUrl>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
