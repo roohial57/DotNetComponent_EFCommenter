@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>	  
 	  <PackageId>EFCommenter</PackageId>
-	  <Version>1.0.0</Version>
+	  <Version>1.0.1</Version>
 	  <Authors>Roohi Alizadeh</Authors>
 	  <Description>
 		  All summaries of entities, properties, and enums will be added as comments on the corresponding database tables and columns.

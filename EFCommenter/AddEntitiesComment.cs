@@ -37,7 +37,7 @@ public static partial class ModelBuilderExtentionMethods
             foreach (var property in entityType.GetProperties())
             {
                 var underlyingType = Nullable.GetUnderlyingType(property.ClrType) ?? property.ClrType;
-                string? comment = underlyingType.IsEnum ? GetEnumComment(underlyingType) : GetPropertyComment(entityType, property);
+                var comment = underlyingType.IsEnum ? GetEnumComment(underlyingType) : GetPropertyComment(entityType, property);
                 if (!string.IsNullOrEmpty(comment))
                     property.SetComment(comment);
             }
@@ -51,7 +51,7 @@ public static partial class ModelBuilderExtentionMethods
                 entityComment = string.IsNullOrEmpty(entityComment) ? entityType.ShortName() : $"{entityType.ShortName()} | {entityComment}";
                 var derivedTypesComments = derivedTypes.Select(t =>
                         {
-                            string? entityComment = t.ClrType.GetXmlDocsSummary();
+                            string entityComment = t.ClrType.GetXmlDocsSummary();
                             entityComment = string.IsNullOrEmpty(entityComment) ? null : $" | {entityComment} ";
                             return t.ShortName() + entityComment;
                         }
@@ -65,8 +65,8 @@ public static partial class ModelBuilderExtentionMethods
                     .GroupBy(x => x.property.Name);
                 foreach (var g in pGroups)
                 {
-                    string? enumComment = null;
-                    string? entitiesComment = null;
+                    string enumComment = null;
+                    string entitiesComment = null;
 
                     //enum comment
                     if (g.FirstOrDefault()!.property.ClrType.IsEnum)
@@ -79,9 +79,9 @@ public static partial class ModelBuilderExtentionMethods
                     //Entities comment
                     var entitiesComments = g.Select(p =>
                     {
-                        string? propertyComment = GetPropertyComment(p.entityType, p.property);
+                        string propertyComment = GetPropertyComment(p.entityType, p.property);
                         propertyComment = string.IsNullOrEmpty(propertyComment) ? null : $" | {propertyComment}";
-                        string? entityComment = p.entityType.ClrType.GetXmlDocsSummary();
+                        string entityComment = p.entityType.ClrType.GetXmlDocsSummary();
                         entityComment = string.IsNullOrEmpty(entityComment) ? null : $" | {entityComment} ";
                         return p.entityType.ShortName() + propertyComment + entityComment;
                     });
@@ -89,7 +89,7 @@ public static partial class ModelBuilderExtentionMethods
                     if (entitiesComment != null)
                         entitiesComment = "Entities: \n" + entitiesComment + "\n \n \n";
 
-                    string? comment = entitiesComment + enumComment;
+                    string comment = entitiesComment + enumComment;
                     if (!string.IsNullOrEmpty(comment))
                         foreach (var p in g)
                             p.property.SetComment(comment);
@@ -99,7 +99,7 @@ public static partial class ModelBuilderExtentionMethods
 
     }
 
-    private static string? GetPropertyComment(IMutableEntityType entityType, IMutableProperty property)
+    private static string GetPropertyComment(IMutableEntityType entityType, IMutableProperty property)
     {
         var memberInfo = entityType.ClrType.GetMember(property.Name).FirstOrDefault();
         if (memberInfo != null)
