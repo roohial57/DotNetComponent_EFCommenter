@@ -1,34 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<PackageId>EFCommenter</PackageId>
-		<Version>1.0.3</Version>
-		<Authors>Roohi Alizadeh</Authors>
-		<Description>
-			All summaries of entities, properties, and enums will be added as comments on the corresponding database tables and columns.
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <PackageId>EFCommenter</PackageId>
+    <Version>1.0.4</Version>
+    <Authors>Roohi Alizadeh</Authors>
+    <Description>
+      All summaries of entities, properties, and enums will be added as comments on the corresponding database tables and columns.
 
 			Note: The XML documentation file option must be enabled in your .csproj file.
 			That means you need to add this to your project file:
 			&lt;PropertyGroup&gt;
 			&lt;GenerateDocumentationFile&gt;true&lt;/GenerateDocumentationFile&gt;
 			&lt;/PropertyGroup&gt;
-		</Description>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<PackageTags>efcore;comment;database;postgresql;sqlserver</PackageTags>
-		<RepositoryUrl>https://github.com/roohial57/DotNetComponent_EFCommenter</RepositoryUrl>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<GenerateDocumentationFile>true</GenerateDocumentationFile>
-		<PackageIcon>logo2.png</PackageIcon>
-		<PackageReadmeFile>readme.md</PackageReadmeFile>
-	</PropertyGroup>
+    </Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageTags>
+      efcore;entity-framework;entity-framework-core;database;database-documentation;
+      migrations;code-first;comments;table-comments;column-comments;
+      sqlserver;postgresql;mysql;oracle;dotnet;.net;.net6;.net7;orm;csharp
+    </PackageTags>
+    <RepositoryUrl>https://github.com/roohial57/DotNetComponent_EFCommenter</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>logo2.png</PackageIcon>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageReleaseNotes>Initial release with core features.</PackageReleaseNotes>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.10" />
-		<PackageReference Include="Namotion.Reflection" Version="3.4.3" />
-		<None Include="logo2.png" Pack="true" PackagePath="\" />
-		<None Include="../readme.md" Pack="true" PackagePath="\" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.10" />
+    <PackageReference Include="Namotion.Reflection" Version="3.4.3" />
+    <None Include="logo2.png" Pack="true" PackagePath="\" />
+    <None Include="../readme.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
 </Project>
