@@ -53,18 +53,18 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 ## Example
 
-After running migrations, the summaries will appear as table and column comments in the database.
+Your entities and enums include some comments.
 
 ```csharp
 /// <summary>
-/// Represents a person entity.
+/// The class declered a person!!!
 /// </summary>
 public class Person
 {
     public int Id { get; set; }
 
     /// <summary>
-    /// The full name of the person.
+    /// The full name of the person!!!
     /// </summary>
     public string Name { get; set; } = "";
 
@@ -79,6 +79,24 @@ public enum PersonType
 }
 ```
 
+In the migration adding, the summaries will be automatically added as table and column comments in the created migration file, and they are ready to update the database comments.
+
+```csharp
+migrationBuilder.CreateTable(
+    name: "People",
+    columns: table => new
+    {
+        Id = table.Column<int>(type: "int", nullable: false)
+            .Annotation("SqlServer:Identity", "1, 1"),
+        Name = table.Column<string>(type: "nvarchar(max)", nullable: false, comment: "The full name of the person!!!"),
+        Type = table.Column<int>(type: "int", nullable: false, comment: "0: Admin | \n1: User | \n2: Guest | ")
+    },
+    constraints: table =>
+    {
+        table.PrimaryKey("PK_People", x => x.Id);
+    },
+    comment: "The class declered a person!!!");
+```
 ---
 
 ## Notes
