@@ -1,5 +1,10 @@
 # EFCommenter
 
+[![NuGet](https://img.shields.io/nuget/v/EFCommenter.svg)](https://www.nuget.org/packages/EFCommenter)
+[![NuGet](https://img.shields.io/nuget/dt/EFCommenter.svg)](https://www.nuget.org/packages/EFCommenter)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+
 All summaries of entities, properties, and enums will be added as comments on the corresponding database tables and columns.
 
 ---
